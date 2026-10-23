@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K4: Tạo Tab View (Nâng cao)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        /* Style cho các nút Tab */
+        .tab-headers {
+            display: flex;
+            cursor: pointer;
+            border-bottom: 2px solid #007bff;
+        }
+        .tab-header {
+            padding: 10px 20px;
+            background: #e9ecef;
+            margin-right: 5px;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            font-weight: bold;
+            color: #495057;
+            transition: background 0.3s;
+        }
+        .tab-header.active {
+            background: #007bff;
+            color: white;
+        }
+        /* Style cho nội dung các Tab */
+        .tab-contents {
+            padding: 20px 0;
+        }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Bài tập K4: Tạo Tab View (Nâng cao)</h2>
+    
+    <!-- Các tiêu đề Tab -->
+    <div class="tab-headers">
+        <div class="tab-header active" onclick="switchTab(event, 'tab1')">Giới thiệu</div>
+        <div class="tab-header" onclick="switchTab(event, 'tab2')">Dịch vụ</div>
+        <div class="tab-header" onclick="switchTab(event, 'tab3')">Liên hệ</div>
+    </div>
+
+    <!-- Nội dung các Tab -->
+    <div class="tab-contents">
+        <div id="tab1" class="tab-content active">
+            <h3>Nội dung Giới thiệu</h3>
+            <p>Đây là trang giới thiệu chi tiết về hệ thống web của chúng tôi. Giao diện Tab View giúp tối ưu không gian hiển thị thông tin.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <h3>Nội dung Dịch vụ</h3>
+            <p>Chúng tôi cung cấp các giải pháp lập trình web chuyên nghiệp, tối ưu hóa trải nghiệm người dùng và bảo mật hệ thống.</p>
+        </div>
+        <div id="tab3" class="tab-content">
+            <h3>Thông tin Liên hệ</h3>
+            <p>Mọi thắc mắc xin vui lòng gửi về email: support@vhu.edu.vn hoặc liên hệ qua số điện thoại hỗ trợ của trường.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function switchTab(evt, tabId) {
+        // Lấy tất cả nội dung tab và ẩn đi
+        const contents = document.querySelectorAll('.tab-content');
+        contents.forEach(content => content.classList.remove('active'));
+
+        // Lấy tất cả các nút header và bỏ class active
+        const headers = document.querySelectorAll('.tab-header');
+        headers.forEach(header => header.classList.remove('active'));
+
+        // Hiển thị tab được chọn và thêm class active cho nút tương ứng
+        document.getElementById(tabId).classList.add('active');
+        evt.currentTarget.classList.add('active');
+    }
+</script>
+
+</body>
+</html>

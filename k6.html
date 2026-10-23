@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K6: Vòng lặp For / While</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #e0a800;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 4px;
+            max-height: 150px;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Bài tập K6: Vòng lặp For / While</h2>
+    
+    <div class="form-group">
+        <label for="num">Nhập số nguyên n (tính tổng từ 1 đến n):</label>
+        <input type="number" id="num" value="10" min="1">
+    </div>
+
+    <button onclick="calculateSum()">Tính toán bằng Vòng Lặp</button>
+
+    <div class="result-box" id="result">Kết quả sẽ hiển thị ở đây...</div>
+</div>
+
+<script>
+    function calculateSum() {
+        const n = parseInt(document.getElementById('num').value);
+        
+        if (isNaN(n) || n < 1) {
+            alert('Vui lòng nhập số nguyên hợp lệ lớn hơn 0!');
+            return;
+        }
+
+        // Dùng vòng lặp for để tính tổng
+        let sumFor = 0;
+        let details = `--- Dùng vòng lặp For ---\n`;
+        for (let i = 1; i <= n; i++) {
+            sumFor += i;
+        }
+        details += `Tổng từ 1 đến ${n} là: ${sumFor}\n\n`;
+
+        // Dùng vòng lặp while để liệt kê các số chẵn
+        let sumWhile = 0;
+        let j = 1;
+        details += `--- Dùng vòng lặp While (Tính tổng số chẵn) ---\n`;
+        while (j <= n) {
+            if (j % 2 === 0) {
+                sumWhile += j;
+            }
+            j++;
+        }
+        details += `Tổng các số chẵn từ 1 đến ${n} là: ${sumWhile}`;
+
+        // Hiển thị kết quả ra màn hình (dùng white-space để giữ định dạng xuống dòng)
+        const resultBox = document.getElementById('result');
+        resultBox.style.whiteSpace = 'pre-line';
+        resultBox.innerText = details;
+    }
+</script>
+
+</body>
+</html>

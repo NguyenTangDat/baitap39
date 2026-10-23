@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Bài tập 39 (JavaScript)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .info-box {
+            background: #e9ecef;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 25px;
+        }
+        .info-box h3 {
+            margin-top: 0;
+            color: #0056b3;
+        }
+        .menu-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .exercise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .exercise-item {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+        .exercise-item:hover {
+            background: #007bff;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .exercise-item a {
+            text-decoration: none;
+            color: inherit;
+            font-weight: bold;
+            display: block;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Bài tập 39 - JavaScript LTW</h1>
+    <p>Tổng hợp các bài tập thực hành lập trình Web</p>
+</header>
+
+<div class="container">
+    <!-- Thông tin cá nhân -->
+    <div class="info-box">
+        <h3>Thông tin sinh viên</h3>
+        <p><strong>Họ và tên:</strong> Nguyễn Tăng Đạt</p>
+        <p><strong>Mã sinh viên:</strong> 231A010039</p>
+        <p><strong>Lớp học phần:</strong> LTW - 261INT440702 - ST6</p>
+        <p><strong>Trường:</strong> Trường Đại học Văn Hiến</p>
+    </div>
+
+    <!-- Menu điều hướng các bài tập -->
+    <div class="menu-title">Danh sách bài tập thực hành</div>
+    <div class="exercise-grid">
+        <div class="exercise-item">
+            <a href="tk5.html" target="_blank">Bài tập TK5<br><small>Accordion đơn giản</small></a>
+        </div>
+        <div class="exercise-item">
+            <a href="tk7.html" target="_blank">Bài tập TK7<br><small>Tạo chuỗi ngẫu nhiên</small></a>
+        </div>
+        <div class="exercise-item">
+            <a href="tk8.html" target="_blank">Bài tập TK8<br><small>Đổi màu Hex sang RGB</small></a>
+        </div>
+        <div class="exercise-item">
+            <a href="k4.html" target="_blank">Bài tập K4<br><small>Tạo Tab View</small></a>
+        </div>
+        <div class="exercise-item">
+            <a href="k6.html" target="_blank">Bài tập K6<br><small>Vòng lặp For / While</small></a>
+        </div>
+        <div class="exercise-item">
+            <a href="k8.html" target="_blank">Bài tập K8<br><small>Kiểm tra & Lọc mảng</small></a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 - Nguyễn Tăng Đạt (231A010039)
+</footer>
+
+</body>
+</html>

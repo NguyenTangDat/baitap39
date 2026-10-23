@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K8: Kiểm tra và Lọc mảng (Array Methods)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #17a2b8;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            width: 100%;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #138496;
+        }
+        .result-box {
+            margin-top: 20px;
+            padding: 12px;
+            background: #e9ecef;
+            border-radius: 4px;
+            font-family: monospace;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Bài tập K8: Lọc mảng số nguyên</h2>
+    
+    <div class="form-group">
+        <label for="arrayInput">Nhập mảng số (cách nhau bởi dấu phẩy):</label>
+        <input type="text" id="arrayInput" value="5, 12, 8, 15, 20, 3, 7, 22">
+    </div>
+
+    <button onclick="filterArray()">Lọc các số > 10</button>
+
+    <div class="result-box" id="result">Kết quả sẽ hiển thị ở đây...</div>
+</div>
+
+<script>
+    function filterArray() {
+        const inputVal = document.getElementById('arrayInput').value;
+        
+        // Chuyển chuỗi nhập vào thành mảng các số nguyên
+        const arr = inputVal.split(',').map(item => parseInt(item.trim()));
+        
+        // Kiểm tra xem có phần tử nào không hợp lệ không
+        if (arr.some(isNaN)) {
+            alert('Vui lòng nhập danh sách các số hợp lệ, cách nhau bằng dấu phẩy!');
+            return;
+        }
+
+        // Sử dụng phương thức filter() để lấy các số lớn hơn 10
+        const filteredArr = arr.filter(num => num > 10);
+
+        // Hiển thị kết quả
+        let html = `Mảng ban đầu: [${arr.join(', ')}]<br>`;
+        html += `Các số lớn hơn 10 (filter): [${filteredArr.join(', ')}]`;
+
+        document.getElementById('result').innerHTML = html;
+    }
+</script>
+
+</body>
+</html>
